@@ -38,7 +38,13 @@
 
 <br/>
 
-[🚀 Live Demo](#) · [📖 Docs](#api-endpoints) · [🐛 Report Bug](#) · [✨ Request Feature](#future-improvements)
+[🚀 Live Demo](https://medical-necessity-assistant.vercel.app/) · [📖 Docs](#api-endpoints) · [🐛 Report Bug](#) · [✨ Request Feature](#future-improvements)
+
+<br/>
+
+<a href="https://medical-necessity-assistant.vercel.app/" target="_blank">
+  <img src="https://github.com/user-attachments/assets/54da85e3-f9fd-4c71-a8ca-44ca248e9a8b" alt="Medical Necessity Assistant Dashboard" width="800" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); margin-top: 20px;">
+</a>
 
 </div>
 
@@ -75,11 +81,14 @@ The **Medical Necessity Assistant** is the clinical coding co-pilot that catches
 
 <table>
 <tr>
-<td width="50%">
+<td width="50%" valign="top">
 
 ### 🩺 Encounter Analyzer
 Submit HPI + Exam + Assessment + CPT code.  
 Get back a **definitive verdict** — `SUPPORTED` or `NOT SUPPORTED` — with a full reasoning chain and pinpoint citations. No ambiguity. No hedging.
+
+<br/>
+<img src="https://github.com/user-attachments/assets/fbb0a866-f63d-4270-a9d4-0a87a39cedc7" alt="Encounter Analyzer Interface" width="100%" style="border-radius: 6px; border: 1px solid #444; margin-top: 10px;">
 
 </td>
 <td width="50%">
@@ -92,10 +101,13 @@ Know your audit exposure *before* the auditor does.
 </td>
 </tr>
 <tr>
-<td width="50%">
+<td width="50%" valign="top">
 
 ### 💬 Clinical Q&A Assistant
 Ask anything about CPT coding, modifiers, UAE compliance, or JAWDA deductions. Every answer is sourced from the official guidelines — never from the model's general knowledge.
+
+<br/>
+<img src="https://github.com/user-attachments/assets/e1a7cb8c-0bad-4082-8a93-3b14251e85c4" alt="Clinical Q&A Interface" width="100%" style="border-radius: 6px; border: 1px solid #444; margin-top: 10px;">
 
 </td>
 <td width="50%">
@@ -111,16 +123,19 @@ Audit-defensible. Always.
 </td>
 </tr>
 <tr>
-<td width="50%">
+<td width="50%" valign="top">
 
 ### 🛡️ Zero-Hallucination Fallback
 If the retrieved context doesn't contain the answer, the system **refuses to answer** and returns an `"Insufficient Information"` state — *before* the LLM is even called.
 
 </td>
-<td width="50%">
+<td width="50%" valign="top">
 
 ### 🗂️ Local Session History
 Analyzed encounters and Q&A pairs are persisted in Zustand + localStorage. Zero latency on re-reads. No re-pinging the LLM for the same question twice.
+
+<br/>
+<img src="https://github.com/user-attachments/assets/b45e7bb1-ee1c-42e6-8439-1250842dc5aa" alt="Local Session History Interface" width="100%" style="border-radius: 6px; border: 1px solid #444; margin-top: 10px;">
 
 </td>
 </tr>
