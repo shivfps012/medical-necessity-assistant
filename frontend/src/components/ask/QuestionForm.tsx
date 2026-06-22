@@ -1,6 +1,6 @@
 "use client";
 
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, SendHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,12 +18,12 @@ export function QuestionForm({ onSubmit, isLoading }: QuestionFormProps) {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
+    control,
   } = useForm<AskFormValues>({
     resolver: zodResolver(askSchema),
   });
 
-  const question = watch("question") || "";
+  const question = useWatch({ control, name: "question" }) || "";
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">

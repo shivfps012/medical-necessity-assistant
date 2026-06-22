@@ -21,7 +21,7 @@ export function RecentAnalyses() {
   return (
     <Card>
       <CardHeader className="pb-3">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-3">
           <CardTitle className="text-base">Recent Analyses</CardTitle>
           <Link
             href="/history"
@@ -42,13 +42,13 @@ export function RecentAnalyses() {
         ) : (
           <div className="divide-y divide-surface-border">
             {recent.map((entry) => (
-              <div key={entry.id} className="py-3 flex items-center gap-3">
+              <div key={entry.id} className="flex flex-col gap-2 py-3 sm:flex-row sm:items-center sm:gap-3">
                 {entry.result.supported ? (
                   <CheckCircle2 className="w-4 h-4 text-status-supported flex-shrink-0" />
                 ) : (
                   <XCircle className="w-4 h-4 text-status-denied flex-shrink-0" />
                 )}
-                <div className="flex-1 min-w-0">
+                <div className="min-w-0 flex-1">
                   <p className="text-sm text-text-primary font-mono">
                     CPT {entry.billed_code}
                   </p>
@@ -56,7 +56,7 @@ export function RecentAnalyses() {
                     {truncate(entry.chief_complaint, 60)}
                   </p>
                 </div>
-                <div className="flex items-center gap-2 flex-shrink-0">
+                <div className="flex flex-wrap items-center gap-2 sm:flex-shrink-0 sm:flex-nowrap">
                   <Badge variant={riskVariant[entry.result.denial_risk]}>
                     {entry.result.denial_risk}
                   </Badge>

@@ -17,13 +17,13 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="p-6 md:p-8 max-w-3xl mx-auto space-y-6">
+    <div className="w-full max-w-3xl space-y-6 p-4 sm:p-6 md:p-8">
       <div>
         <h1 className="text-2xl font-bold text-text-primary">Settings</h1>
         <p className="text-sm text-text-secondary mt-1">Manage application preferences and data.</p>
       </div>
 
-      <div className="bg-surface-card border border-surface-border rounded-lg p-6 space-y-4">
+      <div className="space-y-4 rounded-lg border border-surface-border bg-surface-card p-4 sm:p-6">
         <div>
           <h3 className="text-base font-semibold text-text-primary">Data Management</h3>
           <p className="text-sm text-text-muted mt-1">

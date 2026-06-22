@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ChevronDown, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ALL_CPT_CODES, type CPTCodeMeta } from "@/types/encounter";
+import { ALL_CPT_CODES } from "@/types/encounter";
 
 interface CPTCodeSelectProps {
   value: string;
@@ -35,14 +35,14 @@ export function CPTCodeSelect({ value, onChange, error }: CPTCodeSelectProps) {
         type="button"
         onClick={() => setOpen(!open)}
         className={cn(
-          "flex items-center justify-between w-full h-10 px-3 rounded-md border bg-surface-input text-sm transition-colors",
+          "flex h-10 w-full min-w-0 items-center justify-between rounded-md border bg-surface-input px-3 text-sm transition-colors",
           error ? "border-status-denied" : "border-surface-border",
           open ? "ring-2 ring-primary-500 border-transparent" : "hover:border-primary-800"
         )}
       >
         <span
           className={cn(
-            "font-mono",
+            "min-w-0 truncate text-left font-mono",
             selected
               ? selected.mdm_level
                 ? mdmColors[selected.mdm_level]
@@ -52,11 +52,11 @@ export function CPTCodeSelect({ value, onChange, error }: CPTCodeSelectProps) {
         >
           {selected ? `${selected.code} — ${selected.description}` : "Select CPT code"}
         </span>
-        <ChevronDown className={cn("w-4 h-4 text-text-muted transition-transform", open && "rotate-180")} />
+        <ChevronDown className={cn("h-4 w-4 flex-shrink-0 text-text-muted transition-transform", open && "rotate-180")} />
       </button>
 
       {open && (
-        <div className="absolute z-50 w-full mt-1 rounded-md border border-surface-border bg-surface-card shadow-xl">
+        <div className="absolute z-50 mt-1 w-full min-w-0 rounded-md border border-surface-border bg-surface-card shadow-xl">
           {/* Search */}
           <div className="flex items-center gap-2 px-3 py-2 border-b border-surface-border">
             <Search className="w-3.5 h-3.5 text-text-muted" />
@@ -84,7 +84,7 @@ export function CPTCodeSelect({ value, onChange, error }: CPTCodeSelectProps) {
                   setSearch("");
                 }}
                 className={cn(
-                  "w-full flex items-center gap-3 px-3 py-2.5 text-sm hover:bg-surface-elevated transition-colors text-left",
+                  "flex w-full min-w-0 items-start gap-3 px-3 py-2.5 text-left text-sm transition-colors hover:bg-surface-elevated",
                   value === code.code && "bg-primary-900"
                 )}
               >
@@ -96,7 +96,7 @@ export function CPTCodeSelect({ value, onChange, error }: CPTCodeSelectProps) {
                 >
                   {code.code}
                 </span>
-                <span className="text-text-secondary text-xs leading-tight">
+                <span className="min-w-0 text-xs leading-tight text-text-secondary">
                   {code.description}
                 </span>
               </button>

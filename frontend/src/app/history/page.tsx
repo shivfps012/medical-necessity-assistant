@@ -10,7 +10,7 @@ export default function HistoryPage() {
   const { history: questions } = useAskStore();
 
   return (
-    <div className="p-6 md:p-8 max-w-5xl mx-auto space-y-8">
+    <div className="w-full max-w-5xl space-y-8 p-4 sm:p-6 md:p-8">
       <div>
         <h1 className="text-2xl font-bold text-text-primary">History</h1>
         <p className="text-sm text-text-secondary mt-1">Locally cached history of your analyses and questions.</p>
@@ -23,12 +23,12 @@ export default function HistoryPage() {
         ) : (
           <div className="space-y-3">
             {analyses.map(entry => (
-              <div key={entry.id} className="bg-surface-card border border-surface-border p-4 rounded-lg flex items-center justify-between">
-                <div>
+              <div key={entry.id} className="flex flex-col gap-3 rounded-lg border border-surface-border bg-surface-card p-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="min-w-0">
                   <p className="text-sm font-mono text-text-primary mb-1">CPT {entry.billed_code}</p>
                   <p className="text-xs text-text-secondary max-w-xl truncate">{entry.chief_complaint}</p>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap sm:gap-4">
                   <Badge variant={entry.result.supported ? "supported" : "denied"}>
                     {entry.result.supported ? "SUPPORTED" : "DENIED"}
                   </Badge>
@@ -48,9 +48,9 @@ export default function HistoryPage() {
           <div className="space-y-3">
             {questions.map(entry => (
               <div key={entry.id} className="bg-surface-card border border-surface-border p-4 rounded-lg">
-                <div className="flex justify-between items-start mb-2">
-                  <p className="text-sm text-text-primary max-w-2xl">{entry.question}</p>
-                  <span className="text-xs text-text-muted flex-shrink-0">{formatTimestamp(entry.timestamp)}</span>
+                <div className="mb-2 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                  <p className="max-w-2xl text-sm text-text-primary">{entry.question}</p>
+                  <span className="flex-shrink-0 text-xs text-text-muted">{formatTimestamp(entry.timestamp)}</span>
                 </div>
                 {entry.billed_code && (
                   <span className="text-xs font-mono bg-surface-elevated px-2 py-1 rounded text-text-secondary">

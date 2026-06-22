@@ -11,7 +11,7 @@ export default function AnalyzePage() {
   const { currentResult } = useAnalyzeStore();
 
   return (
-    <div className="p-6 md:p-8 max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_450px] xl:grid-cols-[1fr_500px] gap-8">
+    <div className="grid w-full grid-cols-1 gap-4 p-4 sm:p-6 md:p-8 xl:grid-cols-[minmax(0,1fr)_minmax(360px,500px)] xl:gap-8">
       {/* Input Column */}
       <div className="space-y-6">
         <div>
@@ -20,13 +20,13 @@ export default function AnalyzePage() {
             Enter clinical documentation to verify medical necessity against AMA and HAAD guidelines.
           </p>
         </div>
-        <div className="bg-surface-card border border-surface-border rounded-xl p-6">
+        <div className="rounded-xl border border-surface-border bg-surface-card p-4 sm:p-6">
           <EncounterForm onSubmit={(data) => mutate(data)} isLoading={isPending} />
         </div>
       </div>
 
       {/* Output Column */}
-      <div className="bg-surface-card border border-surface-border rounded-xl p-6 h-fit sticky top-6">
+      <div className="h-fit rounded-xl border border-surface-border bg-surface-card p-4 sm:p-6 xl:sticky xl:top-20">
         <h2 className="text-lg font-semibold text-text-primary mb-5">Analysis Result</h2>
         
         {isPending ? (
@@ -34,7 +34,7 @@ export default function AnalyzePage() {
         ) : currentResult ? (
           <AnalysisResult result={currentResult} />
         ) : (
-          <div className="flex flex-col items-center justify-center h-[400px] text-center border-2 border-dashed border-surface-border rounded-lg">
+          <div className="flex min-h-[280px] flex-col items-center justify-center rounded-lg border-2 border-dashed border-surface-border text-center sm:min-h-[400px]">
             <p className="text-sm text-text-secondary">No analysis yet</p>
             <p className="text-xs text-text-muted mt-1 max-w-[250px]">
               Fill out the encounter form and click analyze to see compliance results here.

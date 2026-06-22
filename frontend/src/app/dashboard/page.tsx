@@ -3,7 +3,7 @@ import { RecentAnalyses } from "@/components/dashboard/RecentAnalyses";
 
 export default function DashboardPage() {
   return (
-    <div className="p-6 md:p-8 space-y-6 max-w-7xl mx-auto">
+    <div className="w-full space-y-6 p-4 sm:p-6 md:p-8">
       <div>
         <h1 className="text-2xl font-bold text-text-primary">Dashboard</h1>
         <p className="text-sm text-text-secondary mt-1">
@@ -13,7 +13,7 @@ export default function DashboardPage() {
 
       <QuickStats />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-4 lg:gap-6">
         <RecentAnalyses />
         {/* Placeholder for future QuickAsk or system status widget */}
         <div className="border border-surface-border rounded-lg bg-surface-card/50 flex items-center justify-center min-h-[300px]">

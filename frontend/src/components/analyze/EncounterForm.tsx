@@ -60,14 +60,14 @@ export function EncounterForm({ onSubmit, isLoading }: EncounterFormProps) {
           name="visit_type"
           control={control}
           render={({ field }) => (
-            <div className="flex gap-2">
+            <div className="grid gap-2 sm:grid-cols-3">
               {visitTypes.map(({ value, label }) => (
                 <button
                   key={value}
                   type="button"
                   onClick={() => field.onChange(value)}
                   className={cn(
-                    "flex-1 py-2 text-sm rounded-md border font-medium transition-colors",
+                    "min-h-10 rounded-md border px-3 py-2 text-sm font-medium transition-colors",
                     field.value === value
                       ? "bg-primary-700 border-primary-500 text-white"
                       : "border-surface-border text-text-secondary hover:border-primary-800 hover:text-text-primary"

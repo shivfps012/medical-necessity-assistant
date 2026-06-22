@@ -11,7 +11,7 @@ export function VerdictBadge({ supported, billedCode, className }: VerdictBadgeP
   return (
     <div
       className={cn(
-        "flex items-center gap-3 px-5 py-4 rounded-lg border",
+        "flex items-center gap-3 rounded-lg border px-4 py-4 sm:px-5",
         supported
           ? "bg-status-supported/10 border-status-supported/30"
           : "bg-status-denied/10 border-status-denied/30",
@@ -26,7 +26,7 @@ export function VerdictBadge({ supported, billedCode, className }: VerdictBadgeP
       <div>
         <p
           className={cn(
-            "text-xl font-bold tracking-wide",
+            "text-lg font-bold tracking-wide sm:text-xl",
             supported ? "text-status-supported" : "text-status-denied"
           )}
         >

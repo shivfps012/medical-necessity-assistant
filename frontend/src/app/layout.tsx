@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased text-text-primary bg-surface-base h-screen overflow-hidden`}
+        className={`${inter.variable} ${jetbrainsMono.variable} min-h-dvh overflow-x-hidden bg-surface-base font-sans text-text-primary antialiased lg:h-screen lg:overflow-hidden`}
       >
         <Providers>
           <PageShell>{children}</PageShell>

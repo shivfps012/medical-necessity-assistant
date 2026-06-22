@@ -20,11 +20,21 @@ const navItems = [
   { href: "/settings", label: "Settings", icon: Settings },
 ];
 
-export function Sidebar() {
+interface SidebarProps {
+  className?: string;
+  onNavigate?: () => void;
+}
+
+export function Sidebar({ className, onNavigate }: SidebarProps) {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-60 bg-surface-base border-r border-surface-border flex flex-col z-50">
+    <aside
+      className={cn(
+        "fixed left-0 top-0 z-50 h-dvh w-60 flex-col border-r border-surface-border bg-surface-base",
+        className
+      )}
+    >
       {/* Logo */}
       <div className="px-5 py-5 border-b border-surface-border">
         <div className="flex items-center gap-2.5">
@@ -51,6 +61,7 @@ export function Sidebar() {
             <Link
               key={href}
               href={href}
+              onClick={onNavigate}
               className={cn(
                 "flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium transition-colors relative group",
                 isActive

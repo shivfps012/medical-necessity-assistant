@@ -20,7 +20,7 @@ export function QuickStats() {
   ];
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:gap-4">
       {stats.map(({ label, value, icon: Icon, color }) => (
         <Card key={label}>
           <CardContent className="pt-5">
